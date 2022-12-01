@@ -19,6 +19,7 @@ const App = () => {
     }
     setPos(pos - 1);
   }
+  console.log(pos)
   return (
     <main className="App">
       <h3 className='heading'><span>/</span> Reviews</h3>
@@ -31,11 +32,10 @@ const App = () => {
             if (index === pos) {
               return "active"
             }
-            else if (index > pos) {
+            else if (index === pos - 1 || (pos === 0 && index === people.length - 1)) {
               return "last"
             }
-            else if (index < pos)
-              return "next"
+            return "next"
           }}
         />)}
         <FaAngleRight onClick={() => { nextSlide() }} className='btn-icon next' />

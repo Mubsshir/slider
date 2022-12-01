@@ -1,6 +1,6 @@
 import styles from './ReviewCard.module.css'
 import { FaQuoteRight } from 'react-icons/fa';
-import people from '../data';
+
 const ReviewCard = (props) => {
     const { image, name, title, quote } = props.person;
     let styleName = props.class();

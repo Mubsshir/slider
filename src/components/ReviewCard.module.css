@@ -4,9 +4,10 @@
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
-  width: 70%;
+  width: 40%;
   padding: 10px;
   transition: all 0.5s linear;
+  opacity: 0;
 }
 .ReviewCard img {
   width: 150px;
@@ -48,10 +49,17 @@
 }
 .activeSlide {
   transform: translateX(0);
+  opacity: 1;
 }
 .lastSlide {
   transform: translateX(-180%);
 }
 .nextSlide {
   transform: translateX(180%);
+}
+
+@media screen and (max-width: 991px) {
+  .ReviewCard {
+    width: 80%;
+  }
 }
