@@ -1,0 +1,57 @@
+.ReviewCard {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 70%;
+  padding: 10px;
+  transition: all 0.5s linear;
+}
+.ReviewCard img {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+  padding: 4px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+}
+.ReviewCard .name {
+  margin-top: 20px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+  color: green;
+  letter-spacing: 1px;
+}
+.ReviewCard .job {
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.ReviewCard .about {
+  margin: 20px 0;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: rgb(61, 53, 53);
+}
+.ReviewCard .icon {
+  font-size: 35px;
+  color: green;
+}
+.activeSlide {
+  transform: translateX(0);
+}
+.lastSlide {
+  transform: translateX(-180%);
+}
+.nextSlide {
+  transform: translateX(180%);
+}

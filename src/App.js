@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import ReviewCard from './components/ReviewCard';
+import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
+import people from './data';
+import { useState } from 'react';
+const App = () => {
+  const [pos, setPos] = useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <main className="App">
+      <h3 className='heading'><span>/</span> Reviews</h3>
+      <section className='slider'>
+        <FaAngleLeft className='btn-icon prev' />
+        {people.map((buddy, index) => <ReviewCard
+          key={buddy.id}
+          person={buddy}
+          class={() => { return "" }}
+        />)}
+        <FaAngleRight className='btn-icon next' />
+      </section>
+    </main>
   );
 }
 
