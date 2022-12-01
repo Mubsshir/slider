@@ -3,8 +3,9 @@ import { FaQuoteRight } from 'react-icons/fa';
 import people from '../data';
 const ReviewCard = (props) => {
     const { image, name, title, quote } = props.person;
+    let styleName = props.class();
     let classname;
-    switch (props.class) {
+    switch (styleName) {
         case "active":
             classname = styles.activeSlide;
             break;
