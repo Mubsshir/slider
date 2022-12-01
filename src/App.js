@@ -2,7 +2,7 @@ import './App.css';
 import ReviewCard from './components/ReviewCard';
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 import people from './data';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 const App = () => {
   const [pos, setPos] = useState(0);
   const nextSlide = () => {
@@ -19,7 +19,18 @@ const App = () => {
     }
     setPos(pos - 1);
   }
-  console.log(pos)
+  useEffect(() => {
+    let slide = setInterval(() => {
+      setPos(prev => {
+        let position = prev + 1;
+        if (position > people.length - 1) {
+          position = 0;
+        }
+        return position;
+      })
+    }, 5000);
+    return () => { clearInterval(slide); }
+  }, [pos])
   return (
     <main className="App">
       <h3 className='heading'><span>/</span> Reviews</h3>
